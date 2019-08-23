@@ -15,7 +15,7 @@ class Seed
   def generate_locations
     20.times do |i|
       location = Location.create!(
-        name: Faker::Book.name,
+        name: Faker::Address.community,
         place: Faker::Address.state,
         content: Faker::Movie.quote
       )

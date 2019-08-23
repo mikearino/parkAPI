@@ -11,13 +11,13 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @locations = Location.create(location_params)
-    json_response(@location)
+    @location = Location.create!(location_params)
+    json_response(@location, :created)
   end
 
   def update
     @location = Location.find(params[:id])
-    @location.update(location_params)
+    @location.update!(location_params)
   end
 
   def destroy
