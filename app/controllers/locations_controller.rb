@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
 
   def index
-    @locations = {"spot": "The secret of getting ahead is getting started."}
+    @locations = {"spot": "I dont' understand why im getting a 500."}
     json_response(@locations)
   end
 
