@@ -1,9 +1,9 @@
 class LocationsController < ApplicationController
 
   def index
-    name = params[:name]
-    binding.pry
-    @locations = Location.search(name)
+    @locations = Location.all
+    place = params[:place]
+    @locations = Location.search(place)
     json_response(@locations)
   end
 
@@ -26,7 +26,6 @@ class LocationsController < ApplicationController
     }
   end
 end
-
 
   def destroy
     @location = Location.find(params[:id])
