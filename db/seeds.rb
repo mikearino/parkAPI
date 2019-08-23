@@ -19,6 +19,13 @@ class Seed
         place: Faker::Address.state,
         content: Faker::Movie.quote
       )
+      rand(1..60).times do |i|
+        reviews = location.reviews.create!(
+          author: Faker::Name.name,
+          content_body: Faker::Hipster.sentence,
+          rating: Faker::Number.normal
+        )
+      end
     puts "Location #{i}: name is #{location.name} and content is '#{location.content}'"
     end
   end
