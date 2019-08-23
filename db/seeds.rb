@@ -9,20 +9,19 @@ class Seed
 
   def self.begin
     seed = Seed.new
-    seed.generate_location
+    seed.generate_locations
   end
 
-  def generate_location
+  def generate_locations
     20.times do |i|
       location = Location.create!(
-        name: Faker::GreekPhilosophers.name,
-        place: Faker::Address.street_address,
-        content: Faker::Hipster.paragraph
+        name: Faker::Book.name,
+        place: Faker::Address.state,
+        content: Faker::Movie.quote
       )
-    end
-      puts "Location #{i}: name is #{location.name} and content is '#{location.content}'"
+    puts "Location #{i}: name is #{location.name} and content is '#{location.content}'"
     end
   end
-
+end
 
 Seed.begin
