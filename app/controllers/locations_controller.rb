@@ -1,7 +1,9 @@
 class LocationsController < ApplicationController
 
   def index
-    @locations = Location.all
+    name = params[:name]
+    binding.pry
+    @locations = Location.search(name)
     json_response(@locations)
   end
 
