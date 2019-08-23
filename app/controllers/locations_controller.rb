@@ -26,10 +26,6 @@ class LocationsController < ApplicationController
   end
 
   private
-  def json_response(object, status = :ok)
-    render json: object, status: status
-  end
-
   def location_params
     params.permit(:name, :place, :content)
   end
