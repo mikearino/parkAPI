@@ -9,17 +9,17 @@ class Seed
 
   def self.begin
     seed = Seed.new
-    seed.generate_locations
+    seed.generate_location
   end
 
-  def generate_locations
-    20.times do |i|
+  def generate_location
+    100.times do |i|
       location = Location.create!(
         name: Faker::Address.community,
         place: Faker::Address.state,
-        content: Faker::Movie.quote
+        content: Faker::Hipster.sentence
       )
-      rand(1..60).times do |i|
+      rand(1..90).times do |i|
         reviews = location.reviews.create!(
           author: Faker::Name.name,
           content_body: Faker::Hipster.sentence,
