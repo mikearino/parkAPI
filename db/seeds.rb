@@ -6,13 +6,13 @@ class Seed
   end
 
   def generate_location
-    600.times do |i|
+    10.times do |i|
       location = Location.create!(
         name: Faker::Address.community,
         place: Faker::Address.state,
         content: Faker::Hipster.sentence
       )
-      rand(1..20).times do |i|
+      rand(1..10).times do |i|
         reviews = location.reviews.create!(
           author: Faker::Name.name,
           content_body: Faker::Hipster.sentence,

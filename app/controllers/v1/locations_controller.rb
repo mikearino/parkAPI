@@ -37,7 +37,7 @@ class V1::LocationsController < ApplicationController
     end
   end
 
-  def rando
+  def random
     @location = Location.random
     json_response(@location)
   end
