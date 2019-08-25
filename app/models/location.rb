@@ -2,7 +2,7 @@ class Location < ApplicationRecord
 has_many :reviews, dependent: :destroy
 validates :name, :place, :content, presence: true
 
-scope :rando, -> {order("RANDOM()").limit(1)}
+scope :random, -> {order("RANDOM()").limit(1)}
 
 scope :most_popular, -> { select("locations.id, locations.name, locations.place, locations.content, count(reviews.id) as reviews_count")
   .joins(:reviews)
